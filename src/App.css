@@ -1,0 +1,20 @@
+body {
+  background-color: #999184;
+}
+
+.card-album-shadom {
+  -webkit-box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.38);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Ancho de la barra */
+  height: 10px;
+  background: #999184;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1d2124; /* Color del thumb */
+  border-radius: 4px; /* Bordes redondeados */
+}
