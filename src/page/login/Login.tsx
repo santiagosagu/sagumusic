@@ -50,10 +50,7 @@ const Login = () => {
           Sagu Music
         </Typography>
         <div className=" w-[200px] rounded-3xl flex justify-center">
-          <Avatar
-            src="public/image/logo.jpeg"
-            sx={{ width: 100, height: 100 }}
-          />
+          <Avatar src="/image/logo.jpeg" sx={{ width: 100, height: 100 }} />
         </div>
         <TextField
           id="standard-basic"

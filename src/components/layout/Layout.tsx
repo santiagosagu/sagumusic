@@ -15,10 +15,7 @@ const Layout = () => {
         <div className="flex justify-between p-4 absolute lg:block z-[1000] bg-[#c8bfae] w-full rounded-t-2xl layout-container">
           <div className="mt-2 flex items-center gap-4">
             <Popover content={<ContentLogout />}>
-              <Avatar
-                src="public/image/logo.jpeg"
-                sx={{ width: 70, height: 70 }}
-              />
+              <Avatar src="/image/logo.jpeg" sx={{ width: 70, height: 70 }} />
             </Popover>
             <Typography className="font-bold text-xl">Sagu Music</Typography>
           </div>
