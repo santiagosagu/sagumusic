@@ -86,4 +86,9 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    watch: {
+      ignored: ["!**/mockServiceWorker.js"], // No ignores este archivo
+    },
+  },
 });

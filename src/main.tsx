@@ -16,6 +16,7 @@ async function enableMocking() {
         url: "/mockServiceWorker.js",
         options: { scope: "/" },
       },
+      onUnhandledRequest: "bypass",
     });
 
     console.log("Mock Service Worker iniciado correctamente.");
