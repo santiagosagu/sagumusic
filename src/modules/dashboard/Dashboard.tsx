@@ -3,8 +3,14 @@ import SectionBigImage from "./components/albumesDestacados/SectionBigImage";
 import SinglesDestacados from "./components/singlesDestacados/SinglesDestacados";
 import ArtistaDestacados from "./components/artistaDestacados/ArtistaDestacados";
 import useGetList from "../../api/services/getServices/useGetList";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const [dataAlbumsState, setDataAlbumsState] = useState([]);
+  const [dataSinglesState, setDataSinglesState] = useState([]);
+  const [dataTopFiveSongsState, setDataTopFiveSongsState] = useState([]);
+  const [dataFeaturedArtistsState, setDataFeaturedArtistsState] = useState([]);
+
   const { data: dataResponseAlbum, isLoading: isLoadingResponseAlbum } =
     useGetList({
       key: "albums",
@@ -31,6 +37,18 @@ const Dashboard = () => {
     keyResults: "featuredArtists",
   });
 
+  useEffect(() => {
+    setDataAlbumsState(dataResponseAlbum);
+    setDataSinglesState(dataResponseSingle);
+    setDataTopFiveSongsState(dataTopFiveSongs);
+    setDataFeaturedArtistsState(dataFeaturedArtists);
+  }, [
+    dataResponseAlbum,
+    dataResponseSingle,
+    dataTopFiveSongs,
+    dataFeaturedArtists,
+  ]);
+
   return (
     <div className="">
       <div className="flex flex-col lg:flex-row justify-between w-full overflow-y-auto custom-scrollbar">
@@ -41,7 +59,7 @@ const Dashboard = () => {
 
           <div className="flex flex-col flex-1 border-[#c8bfae] h-[100%] ">
             <SectionBigImage
-              dataResponseAlbum={dataResponseAlbum}
+              dataResponseAlbum={dataAlbumsState}
               isLoadingResponseAlbum={isLoadingResponseAlbum}
             />
           </div>
@@ -53,8 +71,8 @@ const Dashboard = () => {
 
           <div className="flex flex-col flex-1 border-[#c8bfae]">
             <SinglesDestacados
-              dataResponseSingle={dataResponseSingle}
-              dataTopFiveSongs={dataTopFiveSongs}
+              dataResponseSingle={dataSinglesState}
+              dataTopFiveSongs={dataTopFiveSongsState}
               isLoadingResponseSingles={isLoadingResponseSingles}
             />
           </div>
@@ -65,7 +83,7 @@ const Dashboard = () => {
           </div>
 
           <div className="flex flex-col flex-1 rounded-br-2xl mt-4 px-8">
-            <ArtistaDestacados dataFeaturedArtists={dataFeaturedArtists} />
+            <ArtistaDestacados dataFeaturedArtists={dataFeaturedArtistsState} />
           </div>
         </div>
       </div>
