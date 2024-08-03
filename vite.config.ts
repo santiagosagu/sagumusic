@@ -18,8 +18,52 @@ export default defineConfig({
       manifest: {
         name: "Sagu Music",
         short_name: "Sagu Music",
-        description: "App de musica online",
-        theme_color: "#ffffff",
+        description: "App de música online",
+        theme_color: "#999184",
+        background_color: "#999184",
+        display: "standalone",
+        start_url: "/",
+        icons: [
+          {
+            src: "/icons/favicon-16x16.png",
+            sizes: "16x16",
+            type: "image/png",
+          },
+          {
+            src: "/icons/favicon-32x32.png",
+            sizes: "32x32",
+            type: "image/png",
+          },
+          {
+            src: "/icons/mstile.png",
+            sizes: "150x150",
+            type: "image/png",
+          },
+
+          {
+            src: "/icons/apple-touch-icon.png",
+            sizes: "180x180",
+            type: "image/png",
+          },
+          {
+            src: "/icons/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icons/android-chrome-512x512",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+        screenshots: [
+          {
+            src: "/screenshots/screenshot1.png",
+            sizes: "2556x1270",
+            type: "image/png",
+            form_factor: "wide",
+          },
+        ],
       },
 
       workbox: {
