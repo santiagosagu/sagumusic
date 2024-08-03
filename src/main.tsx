@@ -8,15 +8,20 @@ async function enableMocking() {
     return;
   }
 
-  const { worker } = await import("./mocks/browser");
+  try {
+    const { worker } = await import("./mocks/browser");
 
-  // `worker.start()` returns a Promise that resolves
-  // once the Service Worker is up and ready to intercept requests.
-  return worker.start({
-    serviceWorker: {
-      url: "/mockServiceWorker.js", // Asegúrate de que esta ruta es accesible
-    },
-  });
+    await worker.start({
+      serviceWorker: {
+        url: "/mockServiceWorker.js",
+        options: { scope: "/" },
+      },
+    });
+
+    console.log("Mock Service Worker iniciado correctamente.");
+  } catch (error) {
+    console.error("Error iniciando el Mock Service Worker:", error);
+  }
 }
 
 enableMocking().then(() => {
