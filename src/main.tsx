@@ -20,12 +20,9 @@ async function enableMocking() {
     });
 
     console.log("Mock Service Worker iniciado correctamente.");
-
-    if (!navigator.serviceWorker.controller) {
-      window.location.reload();
-    }
   } catch (error) {
     console.error("Error iniciando el Mock Service Worker:", error);
+    window.location.reload();
   }
 }
 
