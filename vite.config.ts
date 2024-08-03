@@ -35,7 +35,7 @@ export default defineConfig({
             type: "image/png",
           },
           {
-            src: "/icons/mstile.png",
+            src: "/icons/mstile-150x150.png",
             sizes: "150x150",
             type: "image/png",
           },
@@ -60,6 +60,12 @@ export default defineConfig({
           {
             src: "/screenshots/screenshot1.png",
             sizes: "2556x1270",
+            type: "image/png",
+            form_factor: "wide",
+          },
+          {
+            src: "/screenshots/screenshot2.png",
+            sizes: "388x844",
             type: "image/png",
             form_factor: "wide",
           },
